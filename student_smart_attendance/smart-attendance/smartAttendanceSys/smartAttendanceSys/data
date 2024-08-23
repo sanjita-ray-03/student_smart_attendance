@@ -1,0 +1,24 @@
+{
+    
+  "-O4YVk3I5hc1YpmrYWOp": {
+    "cardnumber": "1345665465",
+    "email": "sanjitaray62@gmail.com",
+    "firstName": "Sanjita ",
+    "iAgree": "",
+    "lastName": "Ray",
+    "pnumber": "5689235644",
+    "stream": "CSE",
+    "year": "3"
+  },
+  "-O4YVskvc7U76I8ocY2y": {
+    "cardnumber": "134566565",
+    "email": "sahali@gmail.com",
+    "firstName": "Sahali ",
+    "iAgree": "",
+    "lastName": "Das",
+    "pnumber": "8943513215",
+    "stream": "CSE",
+    "year": "3"
+  }
+}
+<!-- action="{% url 'index1' %}" -->

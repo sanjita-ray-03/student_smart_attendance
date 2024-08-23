@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="C:\Users\User\Desktop\smart-attendance\smartAttendanceSys\static\img\logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-3/assets/css/registration-3.css">
+    <title>Smart Attendance System</title>
+</head>
+<body>
+    {% load static %}
+<!-- Registration 3 - Bootstrap Brain Component -->
+<section class="p-3 p-md-4 p-xl-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 bsb-tpl-bg-platinum">
+          <div class="d-flex flex-column justify-content-between h-100 p-3 p-md-4 p-xl-5">
+            <h3 class="m-0">Welcome! To Smart Attendance System</h3>
+            <img class="img-fluid rounded mx-auto my-4 image" loading="lazy" src="{% static 'img/sign-up.png' %}" width="245" height="80" alt="BootstrapBrain Logo">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 bsb-tpl-bg-lotion">
+          <div class="p-3 p-md-4 p-xl-5">
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-5">
+                  <h2 class="h3">Registration</h2>
+                  <h3 class="fs-6 fw-normal text-secondary m-0">Enter your details to register</h3>
+                </div>
+              </div>
+            </div>
+            
+            <form method="post" action="{% url 'verify' %}">
+                {% csrf_token %} 
+              <div class="row gy-3 gy-md-4 overflow-hidden mb-4">
+                <div class="col-12">
+                  <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="col-12">
+                  <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="col-12">
+                  <label for="pnumber" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" name="pnumber" id="pnumber" placeholder="Enter your phone no." inputmode="numeric" required>
+                </div>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                  </div>
+                <div class="col-12">
+                    <label for="cardnumber" class="form-label">Card Id. <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="{{ card }}" inputmode="numeric" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="stream" class="form-label">Stream</label>
+                    <input type="text" class="form-control" id="stream" name="stream" placeholder="Enter your stream">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="year" class="form-label">Choose your Year</label>
+                    <select id="year" class="form-select" name="year">
+                      <option selected>Choose</option>
+                      <option value="1">1st Year</option>
+                      <option value="2">2nd Year</option>
+                      <option value="3">3rd Year</option>
+                      <option value="4">4th Year</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+                    <label class="form-check-label text-secondary" for="iAgree">
+                      I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-grid">
+                  <button type="submit" class="btn bsb-btn-xl btn-primary" type="submit">Sign up</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .d-flex .image{
+        width: 30rem !important;
+        height: 22rem !important;
+        margin-bottom: 11rem !important;
+    }
+  </style>
+</body>
+</html>

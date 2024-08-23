@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="C:\Users\User\Desktop\smart-attendance\smartAttendanceSys\static\img\logo.png" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Smart Attendance System</title>
+</head>
+<body>
+    {% load static %}
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo.png' %}"  alt="Bootstrap" width="30" height="30"><span>Smart Attendance</span>
+          </a>
+          <form class="form-inline form-design" action="{% url 'table' %}" method="post">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Hello! User</strong> Please swap your card to be marked yourself as present
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="card text-center">
+            
+            <div class="card-header">
+              Welcome to our Smart Attendance System
+            </div>
+            <img src="{% static 'img/photo.png' %}"  alt="789" width="300" height="250">
+            <div class="card-body">
+              <h5 class="card-title">Swap Your Card Here</h5>
+              <p class="card-text">You will mark as present if you swap your card here</p>
+              <div class="input-group mb-3">
+                <form action="#" method="post" class="input-group-text input" >
+                    {% csrf_token %}
+                <span class="input-group-text" id="inputGroup-sizing-default">Your Card No.</span>
+                <input type="text" value="{{ ca }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter your card number" name="cardid" required>
+              </div>
+              <button type="submit" class="btn btn-primary">PROCEED</button>
+            </form>
+
+            </div>
+       
+          </div>  
+
+      </div>
+      
+
+
+      <style>
+
+        .navbar-brand span
+        {position: relative;
+        top: 0px;
+        font-size: 0.95rem;
+        right: -3px;
+        font-weight: 600;
+    }
+    .card{
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+    .card .card-header{
+        width: 100%;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    .input{
+        background-color: transparent;
+        border: none;
+    }
+
+    .form-design{
+      display: flex;
+    }
+      </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
